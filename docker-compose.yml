@@ -1,0 +1,18 @@
+services:
+  mysql_DB:
+    container_name: mysql_local
+    image: mysql:8.0.30
+    volumes:
+      # 우리가 설정하고 싶은 커스텀 '설정'이 있으면 여기에 정의하면 된다.
+      - ./db/conf.d:/etc/mysql/conf.d
+      # 서버를 실행하면 이 폴더 안에 있는 이 폴더 안에 있는 sh, sql 문이 실행된다.
+      # 주의점으로 파일명 알파벳 순으로 실행되니까 먼저 실행되도록 따로 설정을 해 주어야 한다.
+      - ./db/initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=pass_local
+      - MYSQL_USER=pass_local_user
+      - MYSQL_PASSWORD=passlocal123
+      - MYSQL_ROOT_PASSWORD=passlocal123
+      - TZ=Asia/Seoul
