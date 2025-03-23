@@ -1,4 +1,5 @@
 package com.fastcampus.pass.repository.pass;
 
-public class PassStatus {
+public enum PassStatus {
+    READY, PROGRESSED, EXPIRED
 }
