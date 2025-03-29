@@ -1,4 +1,5 @@
 package com.fastcampus.pass.repository.user;
 
-public class UserStatus {
+public enum UserStatus {
+    ACTIVE, INACTIVE
 }

@@ -1,4 +1,5 @@
 package com.fastcampus.pass.repository.booking;
 
-public class BookingStatus {
+public enum BookingStatus {
+    READY, PROGRESSED, COMPLETED, CANCELLED
 }
